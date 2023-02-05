@@ -1,0 +1,73 @@
+{% extends 'catalog/base.html' %}
+{% load i18n %}
+
+{% block title %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "Entry list" %}</title>
+</head>
+{% endblock %}
+
+{% block content %}
+        <div class="banner header-text">
+          <div class="owl-banner owl-carousel">
+            <div class="banner-item-03">
+              <div class="text-content">
+                <h2>{% trans "Texts" %}</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+    <div class="products">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="filters">
+              <ul>
+                  <li><a href={% url 'covers' %}>{% trans "Covers" %}</a></li>
+                  <li><a href={% url 'musics' %}>{% trans "Musics" %}</a></li>
+                  <li><a href={% url 'upload_cover' %}>{% trans "Сreate a cover post" %}</a></li>
+                  <li><a href={% url 'upload_music' %}>{% trans "Сreate a music post" %}</a></li>
+                  <li><a href={% url 'upload_text' %}>{% trans "Сreate a text post" %}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="col-md-12">
+            <div class="filters-content">
+                <div class="row grid">
+                    {% for text in page_obj %}
+                    <div class="col-lg-4 col-md-4 all des">
+                      <div class="product-item">
+                        <div class="down-content">
+                          <a href={% url 'text_detail' text.id %}>{{ text.offer.name }}</a>
+                          <h6>{{ text.offer.price }}$</h6>
+                          <p>{{ text.offer.description|truncatechars:20 }}</p>
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+          </div>
+    <br />
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+{% endblock %}

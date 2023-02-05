@@ -1,0 +1,433 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-04 19:26+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\catalog\apps.py:7
+msgid "catalog"
+msgstr "каталог"
+
+#: .\catalog\forms.py:8 .\catalog\models.py:11
+msgid "Cover name"
+msgstr "Название обложки"
+
+#: .\catalog\forms.py:9 .\catalog\forms.py:16 .\catalog\forms.py:24
+#: .\catalog\models.py:12 .\users\templates\users\basket.html:24
+#: .\users\templates\users\basket.html:34
+#: .\users\templates\users\basket.html:43
+#: .\users\templates\users\history.html:21
+#: .\users\templates\users\history.html:31
+#: .\users\templates\users\history.html:41
+msgid "Description"
+msgstr "Описание"
+
+#: .\catalog\forms.py:10
+msgid "Files"
+msgstr "Файлы"
+
+#: .\catalog\forms.py:11 .\catalog\forms.py:18 .\catalog\forms.py:26
+#: .\catalog\models.py:15 .\users\templates\users\basket.html:26
+#: .\users\templates\users\basket.html:36
+#: .\users\templates\users\basket.html:44
+#: .\users\templates\users\history.html:23
+#: .\users\templates\users\history.html:33
+#: .\users\templates\users\history.html:42
+msgid "Price"
+msgstr "Цена"
+
+#: .\catalog\forms.py:15
+msgid "Music name"
+msgstr "Название мелодии"
+
+#: .\catalog\forms.py:17
+msgid "Audio"
+msgstr "Звук"
+
+#: .\catalog\forms.py:23
+msgid "Text name"
+msgstr "Название текста"
+
+#: .\catalog\forms.py:25 .\catalog\models.py:47
+#: .\users\templates\users\basket.html:46
+#: .\users\templates\users\history.html:45
+msgid "Text"
+msgstr "Текст"
+
+#: .\catalog\models.py:8
+msgid "seller"
+msgstr "продавец"
+
+#: .\catalog\models.py:9 .\users\models.py:55 .\users\models.py:56
+msgid "user"
+msgstr "пользователь"
+
+#: .\catalog\models.py:13
+msgid "Date create"
+msgstr "Дата создания"
+
+#: .\catalog\models.py:14
+msgid "date buy"
+msgstr "дата покупки"
+
+#: .\catalog\models.py:16
+msgid "type offer"
+msgstr "тип товара"
+
+#: .\catalog\models.py:17
+msgid "property"
+msgstr "характеристики"
+
+#: .\catalog\models.py:25
+msgid "offer type"
+msgstr "тип товара"
+
+#: .\catalog\models.py:33 .\catalog\models.py:46 .\catalog\models.py:61
+msgid "offer"
+msgstr "товар"
+
+#: .\catalog\models.py:40
+msgid "covers"
+msgstr "обложки"
+
+#: .\catalog\models.py:41
+msgid "cover"
+msgstr "обложка"
+
+#: .\catalog\models.py:48 .\catalog\models.py:81
+msgid "Style"
+msgstr "Стили"
+
+#: .\catalog\models.py:55
+msgid "music texts"
+msgstr "Текста"
+
+#: .\catalog\models.py:56
+msgid "music text"
+msgstr "Текст"
+
+#: .\catalog\models.py:62 .\catalog\models.py:76
+msgid "Genre"
+msgstr "Жанр"
+
+#: .\catalog\models.py:70
+msgid "musics"
+msgstr "мелодии"
+
+#: .\catalog\models.py:71
+msgid "music"
+msgstr "мелодия"
+
+#: .\catalog\models.py:86
+msgid "name"
+msgstr "название"
+
+#: .\catalog\models.py:96
+msgid "value"
+msgstr "значение"
+
+#: .\catalog\templates\catalog\cover_create.html:21
+#: .\catalog\templates\catalog\music_create.html:21
+#: .\catalog\templates\catalog\text_create.html:21
+#: .\users\templates\users\login.html:21
+#: .\users\templates\users\register.html:18
+#: .\users\templates\users\update.html:23
+#: .\users\templates\users\update_balance.html:24
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\catalog\templates\catalog\cover_detail.html:7
+msgid "Cover detail"
+msgstr "Детальная страница обложки"
+
+#: .\catalog\templates\catalog\cover_detail.html:19
+#: .\catalog\templates\catalog\cover_list.html:18
+#: .\catalog\templates\catalog\music_list.html:26
+#: .\catalog\templates\catalog\text_detail.html:19
+#: .\catalog\templates\catalog\text_list.html:27
+#: .\users\templates\users\main.html:33
+msgid "Covers"
+msgstr "Обложки"
+
+#: .\catalog\templates\catalog\cover_detail.html:20
+#: .\catalog\templates\catalog\cover_list.html:29
+#: .\catalog\templates\catalog\music_list.html:15
+#: .\catalog\templates\catalog\text_detail.html:20
+#: .\catalog\templates\catalog\text_list.html:28
+#: .\users\templates\users\main.html:34
+msgid "Musics"
+msgstr "Мелодии"
+
+#: .\catalog\templates\catalog\cover_detail.html:21
+#: .\catalog\templates\catalog\cover_list.html:30
+#: .\catalog\templates\catalog\music_list.html:27
+#: .\catalog\templates\catalog\text_detail.html:21
+#: .\catalog\templates\catalog\text_list.html:16
+#: .\users\templates\users\main.html:35
+msgid "Texts"
+msgstr "Текста"
+
+#: .\catalog\templates\catalog\cover_detail.html:22
+#: .\catalog\templates\catalog\cover_list.html:31
+#: .\catalog\templates\catalog\music_list.html:28
+#: .\catalog\templates\catalog\text_detail.html:22
+#: .\catalog\templates\catalog\text_list.html:29
+#: .\users\templates\users\main.html:36
+msgid "Сreate a cover post"
+msgstr "Выставить обложку на продажу"
+
+#: .\catalog\templates\catalog\cover_detail.html:23
+#: .\catalog\templates\catalog\cover_list.html:32
+#: .\catalog\templates\catalog\music_list.html:29
+#: .\catalog\templates\catalog\text_detail.html:23
+#: .\catalog\templates\catalog\text_list.html:30
+#: .\users\templates\users\main.html:37
+msgid "Сreate a music post"
+msgstr "Выставить мелодию на продажу"
+
+#: .\catalog\templates\catalog\cover_detail.html:24
+#: .\catalog\templates\catalog\cover_list.html:33
+#: .\catalog\templates\catalog\music_list.html:30
+#: .\catalog\templates\catalog\text_detail.html:24
+#: .\catalog\templates\catalog\text_list.html:31
+#: .\users\templates\users\main.html:38
+msgid "Сreate a text post"
+msgstr "Выставить текст на продажу"
+
+#: .\catalog\templates\catalog\cover_detail.html:51
+#: .\catalog\templates\catalog\music_detail.html:19
+#: .\catalog\templates\catalog\music_list.html:51
+#: .\catalog\templates\catalog\text_detail.html:49
+#: .\users\templates\users\basket.html:59
+msgid "Add to cart"
+msgstr "Добавить в корзину"
+
+#: .\catalog\templates\catalog\cover_list.html:7
+#: .\catalog\templates\catalog\music_list.html:7
+#: .\catalog\templates\catalog\text_list.html:7
+#: .\users\templates\users\basket.html:7
+msgid "Entry list"
+msgstr "Список записей"
+
+#: .\catalog\templates\catalog\header.html:7
+#: .\catalog\templates\catalog\header.html:12
+msgid "digital"
+msgstr ""
+
+#: .\catalog\templates\catalog\header.html:7
+#: .\catalog\templates\catalog\header.html:12
+msgid "goods"
+msgstr ""
+
+#: .\catalog\templates\catalog\header.html:21
+msgid "Main"
+msgstr "Главная страница"
+
+#: .\catalog\templates\catalog\header.html:24
+#: .\users\templates\users\logout.html:7
+msgid "Logout"
+msgstr "Выйти"
+
+#: .\catalog\templates\catalog\header.html:28
+#: .\users\templates\users\login.html:7
+msgid "Login"
+msgstr "Войти в учетную запись"
+
+#: .\catalog\templates\catalog\header.html:31
+#: .\users\templates\users\register.html:7
+msgid "Registration"
+msgstr "Регистрация"
+
+#: .\catalog\templates\catalog\music_detail.html:7
+msgid "Music detail"
+msgstr "Детальная страница мелодии"
+
+#: .\catalog\templates\catalog\music_detail.html:12
+msgid "Entry id"
+msgstr "ID записи"
+
+#: .\catalog\templates\catalog\music_detail.html:13
+#: .\users\templates\users\basket.html:23
+#: .\users\templates\users\basket.html:33
+msgid "Name entry"
+msgstr "Название записи"
+
+#: .\catalog\templates\catalog\music_detail.html:14
+msgid "Sign out from account"
+msgstr "Выйти из под учетной записи"
+
+#: .\catalog\templates\catalog\text_detail.html:7
+msgid "Text detail"
+msgstr "Детальная страница с текстом"
+
+#: .\catalog\templates\catalog\upload_file.html:7
+#: .\catalog\templates\catalog\upload_file.html:12
+#: .\catalog\templates\catalog\upload_file.html:16
+msgid "File upload"
+msgstr "Загрузка файла"
+
+#: .\users\forms.py:9
+msgid "First name"
+msgstr "Имя"
+
+#: .\users\forms.py:10
+msgid "Last name"
+msgstr "Фамилия"
+
+#: .\users\forms.py:11 .\users\templates\users\main.html:61
+msgid "Email"
+msgstr "Почта"
+
+#: .\users\forms.py:12 .\users\models.py:11
+msgid "Balance"
+msgstr "Баланс"
+
+#: .\users\forms.py:13 .\users\templates\users\main.html:62
+msgid "Number"
+msgstr "Номер телефона"
+
+#: .\users\forms.py:14 .\users\models.py:13
+msgid "Telegram"
+msgstr "Телеграм"
+
+#: .\users\forms.py:15
+msgid "Avatar"
+msgstr "Аватар"
+
+#: .\users\forms.py:25 .\users\templates\users\main.html:65
+#: .\users\templates\users\update_balance.html:15
+msgid "Up balance"
+msgstr "Пополнить баланс"
+
+#: .\users\forms.py:29
+msgid "The period for which we request the history"
+msgstr "Период, за который запрашивается история"
+
+#: .\users\models.py:12
+msgid "Phone number"
+msgstr "Номер телефона"
+
+#: .\users\models.py:16
+msgid "profiles"
+msgstr "профили"
+
+#: .\users\models.py:17 .\users\models.py:25 .\users\models.py:45
+msgid "profile"
+msgstr "профиль"
+
+#: .\users\models.py:32
+msgid "profile images"
+msgstr "аватары профилей"
+
+#: .\users\models.py:33
+msgid "profile image"
+msgstr "аватар профиля"
+
+#: .\users\models.py:37 .\users\models.py:47
+msgid "Status"
+msgstr "Статус"
+
+#: .\users\models.py:46
+msgid "bonus count"
+msgstr "количество бонусов"
+
+#: .\users\templates\users\basket.html:15
+msgid "Basket"
+msgstr "Корзина"
+
+#: .\users\templates\users\basket.html:22
+#: .\users\templates\users\basket.html:32
+msgid "Intry id"
+msgstr "ID записи"
+
+#: .\users\templates\users\basket.html:25
+#: .\users\templates\users\basket.html:35
+#: .\users\templates\users\basket.html:45
+#: .\users\templates\users\history.html:22
+#: .\users\templates\users\history.html:32
+#: .\users\templates\users\history.html:44
+msgid "Type"
+msgstr "Тип"
+
+#: .\users\templates\users\basket.html:56
+msgid "Summa"
+msgstr "Сумма"
+
+#: .\users\templates\users\basket.html:63
+msgid "Make a purchase"
+msgstr "Совершить покупку"
+
+#: .\users\templates\users\basket.html:67
+#: .\users\templates\users\history.html:15
+msgid "Purchase history"
+msgstr "Запросить историю"
+
+#: .\users\templates\users\history.html:7
+msgid "History buy"
+msgstr "История покупок"
+
+#: .\users\templates\users\history.html:24
+#: .\users\templates\users\history.html:34
+#: .\users\templates\users\history.html:43
+msgid "Date"
+msgstr "Дата"
+
+#: .\users\templates\users\logout.html:12
+msgid "You have successfully logged out your account"
+msgstr "Вы успешно вышли из под вашей учетной записи"
+
+#: .\users\templates\users\main.html:7
+msgid "Main page"
+msgstr "Главная страница"
+
+#: .\users\templates\users\main.html:15
+msgid "the possibility of buying and selling"
+msgstr "возможность покупки и продажи"
+
+#: .\users\templates\users\main.html:16
+msgid "various digital goods"
+msgstr "различных цифровых товаров"
+
+#: .\users\templates\users\main.html:21
+msgid "a large selection of products of various categories"
+msgstr "большой выбор различных товаров"
+
+#: .\users\templates\users\main.html:22
+msgid "melodies and samples"
+msgstr "мелодии и сэмплы"
+
+#: .\users\templates\users\main.html:63
+msgid "Edit profile"
+msgstr "Редактировать профиль"
+
+#: .\users\templates\users\main.html:64
+msgid "Basket user"
+msgstr "Корзина пользователя"
+
+#: .\users\templates\users\main.html:66
+msgid "History user"
+msgstr "История покупок пользователя"
+
+#: .\users\templates\users\update.html:13
+msgid "Profile editing page"
+msgstr "Страница редактирования профиля"
+
+#: .\users\templates\users\update_balance.html:13
+msgid "Balance replenishment page"
+msgstr "Страница пополнения баланса"

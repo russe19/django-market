@@ -1,0 +1,88 @@
+{% extends 'catalog/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+    <meta charset="UTF-8">
+    <title>{% trans "Entry list" %}</title>
+{% endblock %}
+{% block css_add %}
+    <link rel="stylesheet" href="{% static 'users/css/main.css' %}" />
+{% endblock %}
+{% block content %}
+<br><br><br>
+    <div class="products">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="filters">
+              <h1>{% trans "Basket" %} {{ user }}</h1>
+              <h3>Balance: {{ user.profile.balance }}$</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="coverlistinfo">
+        <div class="col-md-12">
+            <div class="filters-content">
+                <div class="row grid">
+                    {% for offer in offers %}
+                        <div class="col-lg-4 col-md-4 all des">
+                            <div class="product-item">
+                            {% if offer.type.name == 'Обложка' %}
+                                <div class="cover-basket">
+                                    <a href={% url 'cover_detail' offer.cover.id %}><h3>{{ offer.name }}</h3></a>
+                                    <p>{% trans "Description" %}: {{ offer.description|truncatechars:20 }}</p>
+                                    <p>{% trans "Type" %}: {{ offer.type }}</p>
+                                    <p>{% trans "Price" %}: {{ offer.price }}$</p>
+                                </div>
+                            {% endif %}
+                            {% if offer.type.name == 'Мелодия' %}
+                                <div class="music-basket">
+                                    <a href={% url 'music_detail' offer.music.id %}><h3>{{ offer.name }}</h3></a>
+                                    <p>{% trans "Description" %}: {{ offer.description|truncatechars:20 }}</p>
+                                    <p>{% trans "Type" %}: {{ offer.type }}</p>
+                                    <p>{% trans "Price" %}: {{ offer.price }}</p>
+                                </div>
+                            {% endif %}
+                            {% if offer.type.name == 'Текст' %}
+                                <div class="text-basket">
+                                    <a href={% url 'text_detail' offer.text.id %}><h3>{{ offer.name }}</h3></a>
+                                    <p>{% trans "Description" %}: {{ offer.description|truncatechars:20 }}</p>
+                                    <p>{% trans "Price" %}: {{ offer.price }}</p>
+                                    <p>{% trans "Type" %}: {{ offer.type }}</p>
+                                </div>
+                            {% endif %}
+                            </div>
+                        </div>
+                        <hr>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+<div class="latest-products">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+            <h2>{% trans "Summa" %}: {{ summ }}</h2>
+            <p><form method="post" action={% url 'clear' %}>
+                {% csrf_token %}
+                <button type="submit">{% trans "Add to cart" %}</button>
+            </form></p>
+            <p><form method="post" action={% url 'buy' %}>
+                {% csrf_token %}
+                <button type="submit">{% trans "Make a purchase" %}</button>
+            </form></p>
+            <form action="{% url 'history' %}" method="">
+                {{ form.as_p }}
+                <button type="submit">{% trans "Purchase history" %}</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

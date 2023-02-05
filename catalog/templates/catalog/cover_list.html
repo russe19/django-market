@@ -1,0 +1,72 @@
+{% extends 'catalog/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+    <meta charset="UTF-8">
+    <title>{% trans "Entry list" %}</title>
+{% endblock %}
+{% block css_add %}
+    <link rel="stylesheet" href="{% static 'media/css/cover_list.css' %}" />
+{% endblock %}
+
+{% block content %}
+        <div class="banner header-text">
+          <div class="owl-banner owl-carousel">
+            <div class="banner-item-01">
+              <div class="text-content">
+                <h2>{% trans "Covers" %}</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+    <div class="products">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="filters">
+              <ul>
+                  <li><a href={% url 'musics' %}>{% trans "Musics" %}</a></li>
+                  <li><a href={% url 'texts' %}>{% trans "Texts" %}</a></li>
+                  <li><a href={% url 'upload_cover' %}>{% trans "Сreate a cover post" %}</a></li>
+                  <li><a href={% url 'upload_music' %}>{% trans "Сreate a music post" %}</a></li>
+                  <li><a href={% url 'upload_text' %}>{% trans "Сreate a text post" %}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="col-md-12">
+            <div class="filters-content">
+                <div class="row grid">
+                    {% for cover in page_obj %}
+                        <div class="col-lg-4 col-md-4 all des">
+                          <div class="product-item">
+                            <a href={% url 'cover_detail' cover.id %}><img class="coverlist" src="../../../static/media/{{ cover.image }}" style="width: 300pt; height: 350px" alt="cover"></a>
+                            <div class="down-content">
+                              <a href={% url 'cover_detail' cover.id %}>{{ cover.offer.name|truncatechars:20 }}</a></a>
+                              <h6>{{ cover.offer.price }}$</h6>
+                              <p>{{ cover.offer.description|truncatechars:20 }}</p>
+                              <p>{{ cover.number }}</p>
+                            </div>
+                          </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <nav class="list-pages">
+            <ul>
+                {% for p in paginator.page_range %}
+                    {% if page_obj.number == p %}
+                        <li class="page-num page-num-selected">{{ p }}</li>
+                    {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2  %}
+                        <li class="page-num">
+                            <a href="?page={{ p }}">{{ p }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+{% endblock %}

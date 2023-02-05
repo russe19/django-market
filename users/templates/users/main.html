@@ -1,0 +1,76 @@
+{% extends 'catalog/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+    <meta charset="UTF-8">
+    <title>{% trans "Main page" %}</title>
+{% endblock %}
+
+{% block content %}
+<div class="banner header-text">
+  <div class="owl-banner owl-carousel">
+    <div class="banner-item-01">
+      <div class="text-content">
+        <h4>{% trans "the possibility of buying and selling" %}</h4>
+        <h2>{% trans "various digital goods" %}</h2>
+      </div>
+    </div>
+    <div class="banner-item-02">
+      <div class="text-content">
+        <h4>{% trans "a large selection of products of various categories" %}</h4>
+        <h2>{% trans "melodies and samples" %}</h2>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="products">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="filters">
+              <ul>
+                  <li><a href={% url 'covers' %}>{% trans "Covers" %}</a></li>
+                  <li><a href={% url 'musics' %}>{% trans "Musics" %}</a></li>
+                  <li><a href={% url 'texts' %}>{% trans "Texts" %}</a></li>
+                  <li><a href={% url 'upload_cover' %}>{% trans "Сreate a cover post" %}</a></li>
+                  <li><a href={% url 'upload_music' %}>{% trans "Сreate a music post" %}</a></li>
+                  <li><a href={% url 'upload_text' %}>{% trans "Сreate a text post" %}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="best-features about-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>{{ request.user }}</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="right-image">
+              <img class="log-base" src="../../../static/media/{{ request.user.profile.profileimage.image }}" alt="icon">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="left-content">
+              <h4>{{ request.user.first_name }} {{ request.user.last_name }}</h4>
+              <h4>{% trans "Email" %}: {{ request.user.email }}</h4>
+              <h4>{% trans "Number" %}: {{ request.user.profile.number }}</h4>
+                <h4><a href={% url 'update' user.id %}>{% trans "Edit profile" %}</a></h4>
+                <h4><a href={% url 'basket' %}>{% trans "Basket user" %}</a></h4>
+                <h4><a href={% url "update_balance" %}>{% trans "Up balance" %}</a></h4>
+                <h4><a href={% url "history" %}>{% trans "History user" %}</a></h4>
+              <ul class="social-icons">
+                <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                <li><a href=""><i class="fa fa-twitter"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

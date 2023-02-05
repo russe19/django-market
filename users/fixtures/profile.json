@@ -1,0 +1,1 @@
+[{"model": "users.profile", "pk": 1, "fields": {"user": 2, "balance": "1000.00", "number": 8911155533, "telegram": "test1"}}, {"model": "users.profile", "pk": 2, "fields": {"user": 3, "balance": "2000.00", "number": 89555111, "telegram": "test2"}}]

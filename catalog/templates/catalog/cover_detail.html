@@ -1,0 +1,60 @@
+{% extends 'catalog/base.html' %}
+{% load i18n %}
+
+{% block title %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "Cover detail" %}</title>
+</head>
+{% endblock %}
+
+{% block content %}
+    <br><br><br>
+    <div class="products">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="filters">
+              <ul>
+                  <li><a href={% url 'covers' %}>{% trans "Covers" %}</a></li>
+                  <li><a href={% url 'musics' %}>{% trans "Musics" %}</a></li>
+                  <li><a href={% url 'texts' %}>{% trans "Texts" %}</a></li>
+                  <li><a href={% url 'upload_cover' %}>{% trans "Сreate a cover post" %}</a></li>
+                  <li><a href={% url 'upload_music' %}>{% trans "Сreate a music post" %}</a></li>
+                  <li><a href={% url 'upload_text' %}>{% trans "Сreate a text post" %}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="best-features about-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>{{ cover.offer.name }}</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="right-image">
+              <img src="../../../static/media/{{ cover.image }}" width="500">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="left-content">
+              <h4>{{ cover.offer.description }}</h4>
+              <h2>{{ cover.offer.price }}$</h2>
+                {% if not cover.offer.user %}
+                    <p><form method="post" action={% url 'shop_detail' cover.offer.id %}>
+                        {% csrf_token %}
+                        <input type="hidden" name="off" value="{{ cover.offer.id }}" />
+                        <button type="submit">{% trans "Add to cart" %}</button>
+                    </form></p>
+                {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

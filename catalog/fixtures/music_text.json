@@ -1,0 +1,1 @@
+[{"model": "catalog.musictext", "pk": 1, "fields": {"offer": 7, "text": "text 1 text", "style": 1}}, {"model": "catalog.musictext", "pk": 2, "fields": {"offer": 8, "text": "text 2 text", "style": 2}}, {"model": "catalog.musictext", "pk": 3, "fields": {"offer": 9, "text": "text 3 text", "style": 3}}]

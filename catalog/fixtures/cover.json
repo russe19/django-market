@@ -1,0 +1,1 @@
+[{"model": "catalog.cover", "pk": 1, "fields": {"offer": 1, "image": "images/23423w54_SutZStI.jpg"}}, {"model": "catalog.cover", "pk": 2, "fields": {"offer": 2, "image": "images/23423w54_H9JnknX.jpg"}}, {"model": "catalog.cover", "pk": 3, "fields": {"offer": 3, "image": "images/image_54omaMx.jpg"}}]

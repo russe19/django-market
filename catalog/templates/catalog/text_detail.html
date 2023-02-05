@@ -1,0 +1,58 @@
+{% extends 'catalog/base.html' %}
+{% load i18n %}
+
+{% block title %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "Text detail" %}</title>
+</head>
+{% endblock %}
+
+{% block content %}
+    <br><br><br>
+    <div class="products">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="filters">
+              <ul>
+                  <li><a href={% url 'covers' %}>{% trans "Covers" %}</a></li>
+                  <li><a href={% url 'musics' %}>{% trans "Musics" %}</a></li>
+                  <li><a href={% url 'texts' %}>{% trans "Texts" %}</a></li>
+                  <li><a href={% url 'upload_cover' %}>{% trans "Сreate a cover post" %}</a></li>
+                  <li><a href={% url 'upload_music' %}>{% trans "Сreate a music post" %}</a></li>
+                  <li><a href={% url 'upload_text' %}>{% trans "Сreate a text post" %}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="best-features about-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>{{ text.offer.name }}</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+              <p>{{ text.text }}</p>
+          </div>
+          <div class="col-md-6">
+            <div class="left-content">
+              <h4>{{ text.offer.description }}</h4>
+              <h2>{{ text.offer.price }}$</h2>
+                {% if not text.offer.user %}
+                    <p><form method="post" action={% url 'shop_detail' text.offer.id %}>
+                        {% csrf_token %}
+                        <input type="hidden" name="off" value="{{ text.offer.id }}" />
+                        <button type="submit">{% trans "Add to cart" %}</button>
+                    </form></p>
+                {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

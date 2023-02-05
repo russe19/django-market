@@ -1,0 +1,28 @@
+{% extends 'catalog/base.html' %}
+{% load i18n %}
+
+{% block title %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "Login" %}</title>
+</head>
+{% endblock %}
+
+{% block content %}
+    <br><br><br>
+<div class="latest-products">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">{% trans "Save" %}</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

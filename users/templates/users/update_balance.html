@@ -1,0 +1,31 @@
+{% extends 'catalog/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+{% endblock %}
+{% block css_add %}
+{% endblock %}
+
+{% block content %}
+<h2>{% trans "Balance replenishment page" %} {{ request.user.username }}</h2>
+<br><br><br><br>
+<h2>{% trans "Up balance" %} {{ request.user.username }}</h2>
+<div class="latest-products">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">{% trans "Save" %}</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

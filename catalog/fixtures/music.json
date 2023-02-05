@@ -1,0 +1,1 @@
+[{"model": "catalog.music", "pk": 1, "fields": {"offer": 4, "genre": 1, "sound": "musics/music_muiv9ik.wav"}}, {"model": "catalog.music", "pk": 2, "fields": {"offer": 5, "genre": 2, "sound": "musics/music_vFo2N6s.wav"}}, {"model": "catalog.music", "pk": 3, "fields": {"offer": 6, "genre": 3, "sound": "musics/music_IlCP16k.wav"}}]
