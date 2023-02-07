@@ -115,7 +115,7 @@ class ClearBasket(LoginRequiredMixin, View):
     http_method_names = ['get', 'post']
 
     def post(self, request):
-        Offer.objects.filter(user=request.user).filter(date=None).update(user=None)
+        Offer.objects.select_related('user').filter(user=request.user).filter(date=None).update(user=None)
         logger_balance.info(f'Пользователь {request.user} очистил корзину')
         return redirect('basket')
 
@@ -124,7 +124,8 @@ def buy_view(request):
     if request.method == 'POST':
         if request.user.is_authenticated:
             with transaction.atomic():
-                offer = Offer.objects.filter(date=None).filter(user=request.user).aggregate(sum=Sum('price'))['sum']
+                offer = Offer.objects.select_related('user').filter(date=None).filter(user=request.user).\
+                    aggregate(sum=Sum('price'))['sum']
                 if (offer is not None) and (request.user.profile.balance > offer):
                     request.user.profile.balance -= offer
                     logger_balance.info(f'Пользователь {request.user} совершил покупку на сумму {offer} рублей')
@@ -141,11 +142,12 @@ class BasketView(LoginRequiredMixin, ListView):
     context_object_name = 'offers'
 
     def get_queryset(self):
-        return Offer.objects.filter(user=self.request.user).filter(date=None)
+        return Offer.objects.select_related('user').filter(user=self.request.user).filter(date=None)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['summ'] = Offer.objects.filter(user=self.request.user).filter(date=None).aggregate(sum=Sum('price'))['sum']
+        context['summ'] = Offer.objects.select_related('user').\
+            filter(user=self.request.user).filter(date=None).aggregate(sum=Sum('price'))['sum']
         context['form'] = HistoryForm()
         return context
 
@@ -183,11 +185,11 @@ class UsersApi(ListAPIView, CreateAPIView, GenericAPIView):
     serializer_class = ProfileSerializer
 
     def get_queryset(self):
-        queryset = Profile.objects.all()
+        queryset = Profile.objects.select_related('user').all()
         user_name = self.request.query_params.get('user__username')
         number = self.request.query_params.get('number')
         if user_name:
-            queryset = queryset.filter(user__username=user_name)
+            queryset = queryset.select_related('user').filter(user__username=user_name)
         if number:
             queryset = queryset.filter(number=number)
         return queryset

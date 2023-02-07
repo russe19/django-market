@@ -22,7 +22,8 @@ class CoverList(ListView):
     paginate_by = 12
 
     def get_queryset(self):
-        return super().get_queryset().filter(offer__user=None).filter(offer__date=None).order_by('-id')
+        return super().get_queryset().select_related('offer').select_related('offer__user').\
+            filter(offer__user=None).filter(offer__date=None).order_by('-id')
 
 
 class MusicList(ListView):
@@ -31,7 +32,8 @@ class MusicList(ListView):
     paginate_by = 12
 
     def get_queryset(self):
-        return super().get_queryset().filter(offer__user=None).filter(offer__date=None).order_by('-id')
+        return super().get_queryset().select_related('offer').select_related('offer__user').\
+            filter(offer__user=None).filter(offer__date=None).order_by('-id')
 
 
 class TextList(ListView):
@@ -40,7 +42,8 @@ class TextList(ListView):
     paginate_by = 12
 
     def get_queryset(self):
-        return super().get_queryset().filter(offer__user=None).filter(offer__date=None).order_by('-id')
+        return super().get_queryset().select_related('offer').select_related('offer__user').\
+            filter(offer__user=None).filter(offer__date=None).order_by('-id')
 
 
 class CoverDetail(DetailView):
@@ -122,16 +125,16 @@ class CoverListApi(ListAPIView, CreateAPIView, GenericAPIView):
     serializer_class = CoverSerializer
 
     def get_queryset(self):
-        queryset = Cover.objects.all()
+        queryset = Cover.objects.select_related('offer', 'offer__user', 'offer__seller').all()
         name = self.request.query_params.get('offer__name')
         user = self.request.query_params.get('offer__user')
         seller = self.request.query_params.get('offer__seller')
         if name:
-            queryset = queryset.filter(offer__name=name)
+            queryset = queryset.select_related('offer').filter(offer__name=name)
         if user:
-            queryset = queryset.filter(offer__user=user)
+            queryset = queryset.select_related('offer').select_related('offer__user').filter(offer__user=user)
         if seller:
-            queryset = queryset.filter(offer__seller=seller)
+            queryset = queryset.select_related('offer').select_related('offer__seller').filter(offer__seller=seller)
         return queryset
 
     def get(self, request):
@@ -142,16 +145,16 @@ class MusicListApi(ListAPIView, CreateAPIView, GenericAPIView):
     serializer_class = MusicSerializer
 
     def get_queryset(self):
-        queryset = Music.objects.all()
+        queryset = Music.objects.select_related('offer', 'offer__user', 'offer__seller').all()
         name = self.request.query_params.get('offer__name')
         user = self.request.query_params.get('offer__user')
         seller = self.request.query_params.get('offer__seller')
         if name:
-            queryset = queryset.filter(offer__name=name)
+            queryset = queryset.select_related('offer').filter(offer__name=name)
         if user:
-            queryset = queryset.filter(offer__user=user)
+            queryset = queryset.select_related('offer').select_related('offer__user').filter(offer__user=user)
         if seller:
-            queryset = queryset.filter(offer__seller=seller)
+            queryset = queryset.select_related('offer').select_related('offer__seller').filter(offer__seller=seller)
         return queryset
 
     def get(self, request):
@@ -162,16 +165,16 @@ class MusicTextListApi(ListAPIView, CreateAPIView, GenericAPIView):
     serializer_class = MusicTextSerializer
 
     def get_queryset(self):
-        queryset = MusicText.objects.all()
+        queryset = MusicText.objects.select_related('offer', 'offer__user', 'offer__seller').all()
         name = self.request.query_params.get('offer__name')
         user = self.request.query_params.get('offer__user')
         seller = self.request.query_params.get('offer__seller')
         if name:
-            queryset = queryset.filter(offer__name=name)
+            queryset = queryset.select_related('offer').filter(offer__name=name)
         if user:
-            queryset = queryset.filter(offer__user=user)
+            queryset = queryset.select_related('offer').select_related('offer__user').filter(offer__user=user)
         if seller:
-            queryset = queryset.filter(offer__seller=seller)
+            queryset = queryset.select_related('offer').select_related('offer__seller').filter(offer__seller=seller)
         return queryset
 
     def get(self, request):
