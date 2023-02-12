@@ -55,7 +55,7 @@ python manage.py makemigrations
 ```
 python manage.py migrate
 ```
-Требуется выполнить команды по установке всех хранимых в проекте файлов фикстур:
+Требуется поочередно выполнить команды по установке всех хранимых в проекте файлов фикстур:
 ```
 python manage.py loaddata users/fixtures/user.json
 python manage.py loaddata users/fixtures/profile.json
