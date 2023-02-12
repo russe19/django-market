@@ -1,8 +1,8 @@
 # Distribution / packaging
 .Python
-**migrations/
-!**migrations/
-!**migrations/__init__.py
+**/migrations/**
+!**/migrations/
+!**/migrations/__init__.py
 build/
 develop-eggs/
 dist/
