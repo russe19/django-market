@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-04 19:26+0300\n"
+"POT-Creation-Date: 2023-02-12 11:45+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,12 +29,12 @@ msgid "Cover name"
 msgstr "Название обложки"
 
 #: .\catalog\forms.py:9 .\catalog\forms.py:16 .\catalog\forms.py:24
-#: .\catalog\models.py:12 .\users\templates\users\basket.html:24
-#: .\users\templates\users\basket.html:34
-#: .\users\templates\users\basket.html:43
-#: .\users\templates\users\history.html:21
-#: .\users\templates\users\history.html:31
-#: .\users\templates\users\history.html:41
+#: .\catalog\models.py:12 .\users\templates\users\basket.html:36
+#: .\users\templates\users\basket.html:44
+#: .\users\templates\users\basket.html:52
+#: .\users\templates\users\history.html:37
+#: .\users\templates\users\history.html:45
+#: .\users\templates\users\history.html:53
 msgid "Description"
 msgstr "Описание"
 
@@ -43,12 +43,12 @@ msgid "Files"
 msgstr "Файлы"
 
 #: .\catalog\forms.py:11 .\catalog\forms.py:18 .\catalog\forms.py:26
-#: .\catalog\models.py:15 .\users\templates\users\basket.html:26
-#: .\users\templates\users\basket.html:36
-#: .\users\templates\users\basket.html:44
-#: .\users\templates\users\history.html:23
-#: .\users\templates\users\history.html:33
-#: .\users\templates\users\history.html:42
+#: .\catalog\models.py:15 .\users\templates\users\basket.html:38
+#: .\users\templates\users\basket.html:46
+#: .\users\templates\users\basket.html:53
+#: .\users\templates\users\history.html:39
+#: .\users\templates\users\history.html:47
+#: .\users\templates\users\history.html:54
 msgid "Price"
 msgstr "Цена"
 
@@ -65,8 +65,6 @@ msgid "Text name"
 msgstr "Название текста"
 
 #: .\catalog\forms.py:25 .\catalog\models.py:47
-#: .\users\templates\users\basket.html:46
-#: .\users\templates\users\history.html:45
 msgid "Text"
 msgstr "Текст"
 
@@ -158,6 +156,7 @@ msgstr "Детальная страница обложки"
 
 #: .\catalog\templates\catalog\cover_detail.html:19
 #: .\catalog\templates\catalog\cover_list.html:18
+#: .\catalog\templates\catalog\music_detail.html:19
 #: .\catalog\templates\catalog\music_list.html:26
 #: .\catalog\templates\catalog\text_detail.html:19
 #: .\catalog\templates\catalog\text_list.html:27
@@ -167,6 +166,7 @@ msgstr "Обложки"
 
 #: .\catalog\templates\catalog\cover_detail.html:20
 #: .\catalog\templates\catalog\cover_list.html:29
+#: .\catalog\templates\catalog\music_detail.html:20
 #: .\catalog\templates\catalog\music_list.html:15
 #: .\catalog\templates\catalog\text_detail.html:20
 #: .\catalog\templates\catalog\text_list.html:28
@@ -176,6 +176,7 @@ msgstr "Мелодии"
 
 #: .\catalog\templates\catalog\cover_detail.html:21
 #: .\catalog\templates\catalog\cover_list.html:30
+#: .\catalog\templates\catalog\music_detail.html:21
 #: .\catalog\templates\catalog\music_list.html:27
 #: .\catalog\templates\catalog\text_detail.html:21
 #: .\catalog\templates\catalog\text_list.html:16
@@ -185,6 +186,7 @@ msgstr "Текста"
 
 #: .\catalog\templates\catalog\cover_detail.html:22
 #: .\catalog\templates\catalog\cover_list.html:31
+#: .\catalog\templates\catalog\music_detail.html:22
 #: .\catalog\templates\catalog\music_list.html:28
 #: .\catalog\templates\catalog\text_detail.html:22
 #: .\catalog\templates\catalog\text_list.html:29
@@ -194,6 +196,7 @@ msgstr "Выставить обложку на продажу"
 
 #: .\catalog\templates\catalog\cover_detail.html:23
 #: .\catalog\templates\catalog\cover_list.html:32
+#: .\catalog\templates\catalog\music_detail.html:23
 #: .\catalog\templates\catalog\music_list.html:29
 #: .\catalog\templates\catalog\text_detail.html:23
 #: .\catalog\templates\catalog\text_list.html:30
@@ -203,6 +206,7 @@ msgstr "Выставить мелодию на продажу"
 
 #: .\catalog\templates\catalog\cover_detail.html:24
 #: .\catalog\templates\catalog\cover_list.html:33
+#: .\catalog\templates\catalog\music_detail.html:24
 #: .\catalog\templates\catalog\music_list.html:30
 #: .\catalog\templates\catalog\text_detail.html:24
 #: .\catalog\templates\catalog\text_list.html:31
@@ -210,11 +214,10 @@ msgstr "Выставить мелодию на продажу"
 msgid "Сreate a text post"
 msgstr "Выставить текст на продажу"
 
-#: .\catalog\templates\catalog\cover_detail.html:51
-#: .\catalog\templates\catalog\music_detail.html:19
+#: .\catalog\templates\catalog\cover_detail.html:52
+#: .\catalog\templates\catalog\music_detail.html:48
 #: .\catalog\templates\catalog\music_list.html:51
-#: .\catalog\templates\catalog\text_detail.html:49
-#: .\users\templates\users\basket.html:59
+#: .\catalog\templates\catalog\text_detail.html:50
 msgid "Add to cart"
 msgstr "Добавить в корзину"
 
@@ -257,20 +260,6 @@ msgstr "Регистрация"
 #: .\catalog\templates\catalog\music_detail.html:7
 msgid "Music detail"
 msgstr "Детальная страница мелодии"
-
-#: .\catalog\templates\catalog\music_detail.html:12
-msgid "Entry id"
-msgstr "ID записи"
-
-#: .\catalog\templates\catalog\music_detail.html:13
-#: .\users\templates\users\basket.html:23
-#: .\users\templates\users\basket.html:33
-msgid "Name entry"
-msgstr "Название записи"
-
-#: .\catalog\templates\catalog\music_detail.html:14
-msgid "Sign out from account"
-msgstr "Выйти из под учетной записи"
 
 #: .\catalog\templates\catalog\text_detail.html:7
 msgid "Text detail"
@@ -347,46 +336,39 @@ msgstr "Статус"
 msgid "bonus count"
 msgstr "количество бонусов"
 
-#: .\users\templates\users\basket.html:15
+#: .\users\templates\users\basket.html:19
 msgid "Basket"
 msgstr "Корзина"
 
-#: .\users\templates\users\basket.html:22
-#: .\users\templates\users\basket.html:32
-msgid "Intry id"
-msgstr "ID записи"
-
-#: .\users\templates\users\basket.html:25
-#: .\users\templates\users\basket.html:35
+#: .\users\templates\users\basket.html:37
 #: .\users\templates\users\basket.html:45
-#: .\users\templates\users\history.html:22
-#: .\users\templates\users\history.html:32
-#: .\users\templates\users\history.html:44
+#: .\users\templates\users\basket.html:54
+#: .\users\templates\users\history.html:38
+#: .\users\templates\users\history.html:46
+#: .\users\templates\users\history.html:55
 msgid "Type"
 msgstr "Тип"
 
-#: .\users\templates\users\basket.html:56
+#: .\users\templates\users\basket.html:69
 msgid "Summa"
 msgstr "Сумма"
 
-#: .\users\templates\users\basket.html:63
+#: .\users\templates\users\basket.html:72
+msgid "Clear basket"
+msgstr "Очистить корзину"
+
+#: .\users\templates\users\basket.html:76
 msgid "Make a purchase"
 msgstr "Совершить покупку"
 
-#: .\users\templates\users\basket.html:67
-#: .\users\templates\users\history.html:15
+#: .\users\templates\users\basket.html:80
+#: .\users\templates\users\history.html:20
 msgid "Purchase history"
 msgstr "Запросить историю"
 
 #: .\users\templates\users\history.html:7
 msgid "History buy"
 msgstr "История покупок"
-
-#: .\users\templates\users\history.html:24
-#: .\users\templates\users\history.html:34
-#: .\users\templates\users\history.html:43
-msgid "Date"
-msgstr "Дата"
 
 #: .\users\templates\users\logout.html:12
 msgid "You have successfully logged out your account"
@@ -431,3 +413,18 @@ msgstr "Страница редактирования профиля"
 #: .\users\templates\users\update_balance.html:13
 msgid "Balance replenishment page"
 msgstr "Страница пополнения баланса"
+
+#~ msgid "Entry id"
+#~ msgstr "ID записи"
+
+#~ msgid "Name entry"
+#~ msgstr "Название записи"
+
+#~ msgid "Sign out from account"
+#~ msgstr "Выйти из под учетной записи"
+
+#~ msgid "Intry id"
+#~ msgstr "ID записи"
+
+#~ msgid "Date"
+#~ msgstr "Дата"

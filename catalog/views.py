@@ -70,13 +70,13 @@ class UploadCover(LoginRequiredMixin, FormView):
     success_url = '/main'
 
     def form_valid(self, form):
-        if not TypeOffer.objects.filter(name='Обложка').exists():
-            TypeOffer.objects.create(name='Обложка')
+        if not TypeOffer.objects.filter(name='Image').exists():
+            TypeOffer.objects.create(name='Image')
         offer = Offer.objects.create(seller=self.request.user,
                                      name=self.request.POST['name'],
                                      description=self.request.POST['description'],
                                      price=self.request.POST['price'],
-                                     type=TypeOffer.objects.get(name='Обложка'))
+                                     type=TypeOffer.objects.get(name='Image'))
 
         entry_image = Cover.objects.create(offer=offer, image=self.request.FILES['images'])
         entry_image.save()
@@ -89,13 +89,13 @@ class UploadMusic(LoginRequiredMixin, FormView):
     success_url = '/main'
 
     def form_valid(self, form):
-        if not TypeOffer.objects.filter(name='Мелодия').exists():
-            TypeOffer.objects.create(name='Мелодия')
+        if not TypeOffer.objects.filter(name='Music').exists():
+            TypeOffer.objects.create(name='Music')
         offer = Offer.objects.create(seller=self.request.user,
                                      name=self.request.POST['name'],
                                      description=self.request.POST['description'],
                                      price=self.request.POST['price'],
-                                     type=TypeOffer.objects.get(name='Мелодия'))
+                                     type=TypeOffer.objects.get(name='Music'))
         music_file = Music.objects.create(offer=offer, sound=self.request.FILES['sound'],
                                           genre=Genre.objects.get(id=self.request.POST['genre']))
         music_file.save()
@@ -108,13 +108,13 @@ class UploadText(LoginRequiredMixin, FormView):
     success_url = '/main'
 
     def form_valid(self, form):
-        if not TypeOffer.objects.filter(name='Текст').exists():
-            TypeOffer.objects.create(name='Текст')
+        if not TypeOffer.objects.filter(name='Text').exists():
+            TypeOffer.objects.create(name='Text')
         offer = Offer.objects.create(seller=self.request.user,
                                      name=self.request.POST['name'],
                                      description=self.request.POST['description'],
                                      price=self.request.POST['price'],
-                                     type=TypeOffer.objects.get(name='Текст'))
+                                     type=TypeOffer.objects.get(name='Text'))
         text_offer = MusicText.objects.create(offer=offer, text=self.request.POST['text'],
                                               style=Style.objects.get(id=self.request.POST['style']))
         text_offer.save()

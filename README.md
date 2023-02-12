@@ -25,7 +25,19 @@
 
 ### Установка <a name="subparagraph1"></a>
 
-Установим все необходимые библиотеки
+Из командной строки клонируйте проект в удобную для вас папку
+
+```
+git clone https://github.com/russe19/django-market.git
+```
+
+Создайте виртуальное окружение
+
+```
+python -n venv venv
+```
+
+Активируйте окружение и установите все необходимые библиотеки
 
 ```
 pip install -r requirements.txt
@@ -57,6 +69,10 @@ python manage.py loaddata catalog/fixtures/offer.json
 python manage.py loaddata catalog/fixtures/cover.json
 python manage.py loaddata catalog/fixtures/music.json
 python manage.py loaddata catalog/fixtures/music_text.json
+```
+Активировать русскую локализацию
+```
+python manage.py compilemessages
 ```
 Для запуска приложения выполним команду:
 ```

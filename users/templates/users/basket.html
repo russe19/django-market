@@ -30,7 +30,7 @@
                     {% for offer in offers %}
                         <div class="col-lg-4 col-md-4 all des">
                             <div class="product-item">
-                            {% if offer.type.name == 'Обложка' %}
+                            {% if offer.type.name == 'Image' %}
                                 <div class="cover-basket">
                                     <a href={% url 'cover_detail' offer.cover.id %}><h3>{{ offer.name }}</h3></a>
                                     <p>{% trans "Description" %}: {{ offer.description|truncatechars:20 }}</p>
@@ -38,7 +38,7 @@
                                     <p>{% trans "Price" %}: {{ offer.price }}$</p>
                                 </div>
                             {% endif %}
-                            {% if offer.type.name == 'Мелодия' %}
+                            {% if offer.type.name == 'Music' %}
                                 <div class="music-basket">
                                     <a href={% url 'music_detail' offer.music.id %}><h3>{{ offer.name }}</h3></a>
                                     <p>{% trans "Description" %}: {{ offer.description|truncatechars:20 }}</p>
@@ -46,7 +46,7 @@
                                     <p>{% trans "Price" %}: {{ offer.price }}</p>
                                 </div>
                             {% endif %}
-                            {% if offer.type.name == 'Текст' %}
+                            {% if offer.type.name == 'Text' %}
                                 <div class="text-basket">
                                     <a href={% url 'text_detail' offer.text.id %}><h3>{{ offer.name }}</h3></a>
                                     <p>{% trans "Description" %}: {{ offer.description|truncatechars:20 }}</p>
@@ -69,7 +69,7 @@
             <h2>{% trans "Summa" %}: {{ summ }}</h2>
             <p><form method="post" action={% url 'clear' %}>
                 {% csrf_token %}
-                <button type="submit">{% trans "Add to cart" %}</button>
+                <button type="submit">{% trans "Clear basket" %}</button>
             </form></p>
             <p><form method="post" action={% url 'buy' %}>
                 {% csrf_token %}

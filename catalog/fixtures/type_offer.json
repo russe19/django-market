@@ -1,1 +1,1 @@
-[{"model": "catalog.typeoffer", "pk": 1, "fields": {"name": "Обложка"}}, {"model": "catalog.typeoffer", "pk": 2, "fields": {"name": "Мелодия"}}, {"model": "catalog.typeoffer", "pk": 3, "fields": {"name": "Текст"}}]
+[{"model": "catalog.typeoffer", "pk": 1, "fields": {"name": "Image"}}, {"model": "catalog.typeoffer", "pk": 2, "fields": {"name": "Music"}}, {"model": "catalog.typeoffer", "pk": 3, "fields": {"name": "Text"}}]
